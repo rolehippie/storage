@@ -5,6 +5,8 @@ storage_share: backup
 storage_path:
 storage_uid: root
 storage_gid: root
+storage_dir_mode: 0770
+storage_file_mode: 0660
 storage_credentials: /etc/smbpasswd
 
 storage_options:
@@ -15,7 +17,7 @@ storage_options:
   - x-systemd.device-timeout=10
   - uid={{ storage_uid }}
   - gid={{ storage_gid }}
-  - dir_mode=0770
-  - file_mode=0660
+  - dir_mode={{ storage_dir_mode }}
+  - file_mode={{ storage_file_mode }}
   - workgroup=workgroup
   - credentials={{ storage_credentials }}
