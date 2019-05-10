@@ -1,0 +1,35 @@
+- name: install deps
+  with_items:
+    - cifs-utils
+  package:
+    name: '{{ item }}'
+    state: present
+  tags:
+    - storage
+
+- name: create path
+  file:
+    path: '{{ storage_path }}'
+    state: directory
+  tags:
+    - storage
+
+- name: write credentials
+  template:
+    src: credentials.j2
+    dest: /etc/smbpasswd
+    owner: root
+    group: root
+    mode: u=rw,g=rw,o=
+  tags:
+    - storage
+
+- name: mount storage
+  mount:
+    path: '{{ storage_path }}'
+    src: '//{{ storage_server }}/{{ storage_share }}'
+    fstype: cifs
+    opts: '{{ storage_options | join(",") }}'
+    state: mounted
+  tags:
+    - storage

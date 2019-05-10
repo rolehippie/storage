@@ -1,0 +1,21 @@
+storage_server:
+storage_username:
+storage_password:
+storage_share: backup
+storage_path:
+storage_uid: root
+storage_gid: root
+storage_credentials: /etc/smbpasswd
+
+storage_options:
+  - noauto
+  - nofail
+  - x-systemd.automount
+  - x-systemd.requires=network-online.target
+  - x-systemd.device-timeout=10
+  - uid={{ storage_uid }}
+  - gid={{ storage_gid }}
+  - dir_mode=0770
+  - file_mode=0660
+  - workgroup=workgroup
+  - credentials={{ storage_credentials }}
