@@ -1,20 +1,22 @@
-- name: install deps
-  with_items:
+# Standards: 0.1
+---
+- name: Install required packages
+  loop:
     - cifs-utils
   package:
-    name: '{{ item }}'
+    name: "{{ item }}"
     state: present
   tags:
     - storage
 
-- name: create path
+- name: Create destination path
   file:
-    path: '{{ storage_path }}'
+    path: "{{ storage_path }}"
     state: directory
   tags:
     - storage
 
-- name: write credentials
+- name: Write credentials file
   template:
     src: credentials.j2
     dest: /etc/smbpasswd
@@ -24,12 +26,14 @@
   tags:
     - storage
 
-- name: mount storage
+- name: Mount storage volume
   mount:
-    path: '{{ storage_path }}'
-    src: '//{{ storage_server }}/{{ storage_share }}'
+    path: "{{ storage_path }}"
+    src: "//{{ storage_server }}/{{ storage_share }}"
     fstype: cifs
-    opts: '{{ storage_options | join(",") }}'
+    opts: "{{ storage_options_general + storage_options_extra | join(',') }}"
     state: mounted
   tags:
     - storage
+
+...

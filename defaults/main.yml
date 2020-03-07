@@ -1,15 +1,37 @@
+# Standards: 0.1
+---
+# @var storage_server:description: Server to connect via CIFS
 storage_server:
+
+# @var storage_username:description: Username for CIFS connection
 storage_username:
+
+# @var storage_password:description: Password for CIFS connection
 storage_password:
+
+# @var storage_share:description: Share folder on server
 storage_share: backup
+
+# @var storage_path:description: Local path as mount target
 storage_path:
+
+# @var storage_uid:description: Mount with this user
 storage_uid: root
+
+# @var storage_gid:description: Mount with this group
 storage_gid: root
+
+# @var storage_dir_mode:description: Mount with this dir mode
 storage_dir_mode: 0770
+
+# @var storage_file_mode:description: Mount with this file mode
 storage_file_mode: 0660
+
+# @var storage_credentials:description: Path to credentials file
 storage_credentials: /etc/smbpasswd
 
-storage_options:
+# @var storage_options_general:description: Mount options for CIFS storage
+storage_options_general:
   - noauto
   - nofail
   - x-systemd.automount
@@ -23,3 +45,8 @@ storage_options:
   - file_mode={{ storage_file_mode }}
   - workgroup=workgroup
   - credentials={{ storage_credentials }}
+
+# @var storage_options_extra:description: Additional mount options
+storage_options_extra: []
+
+...
