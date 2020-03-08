@@ -31,7 +31,7 @@
     path: "{{ storage_path }}"
     src: "//{{ storage_server }}/{{ storage_share }}"
     fstype: cifs
-    opts: "{{ storage_options_general + storage_options_extra | join(',') }}"
+    opts: "{{ (storage_options_general + storage_options_extra) | join(',') }}"
     state: mounted
   tags:
     - storage
