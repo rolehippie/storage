@@ -28,10 +28,10 @@ galaxy_info:
         - bionic
         - focal
   galaxy_tags:
-  - storage
-  - box
-  - hetzner
-  - robot
+    - storage
+    - box
+    - hetzner
+    - robot
 
 dependencies: []
 
