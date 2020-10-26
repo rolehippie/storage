@@ -22,10 +22,10 @@ storage_uid: root
 storage_gid: root
 
 # @var storage_dir_mode:description: Mode for directories
-storage_dir_mode: 0770
+storage_dir_mode: "0770"
 
 # @var storage_file_mode:description: Mode for files
-storage_file_mode: 0660
+storage_file_mode: "0660"
 
 # @var storage_credentials:description: Path to credentials file
 storage_credentials: /etc/smbpasswd
