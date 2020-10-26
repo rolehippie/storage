@@ -1,0 +1,12 @@
+# Standards: 1.2
+---
+- name: Converge
+  hosts: all
+  vars:
+    storage_path: /var/lib/foobar
+    storage_server: 192.168.1.1
+    storage_share: share
+  roles:
+    - role: storage
+
+...

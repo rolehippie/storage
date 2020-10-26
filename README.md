@@ -1,30 +1,168 @@
 # storage
 
-TBD
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/storage) [![Build Status](https://img.shields.io/drone/build/rolehippie/storage/master?logo=drone)](https://cloud.drone.io/rolehippie/storage) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/storage)](https://github.com/rolehippie/storage/blob/master/LICENSE) 
 
+Ansible role to mount remote CIFS storage. 
 
-## Security
+## Sponsor 
 
-If you find a security issue please contact thomas@webhippie.de first.
+[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
 
+Building and improving this Ansible role have been sponsored by my employer **Proact Deutschland GmbH**.
 
-## Contributing
+## Table of content
 
-Fork -> Patch -> Push -> Pull Request
+* [Default Variables](#default-variables)
+  * [storage_credentials](#storage_credentials)
+  * [storage_dir_mode](#storage_dir_mode)
+  * [storage_file_mode](#storage_file_mode)
+  * [storage_gid](#storage_gid)
+  * [storage_options](#storage_options)
+  * [storage_password](#storage_password)
+  * [storage_path](#storage_path)
+  * [storage_server](#storage_server)
+  * [storage_share](#storage_share)
+  * [storage_uid](#storage_uid)
+  * [storage_username](#storage_username)
+* [Dependencies](#dependencies)
+* [License](#license)
+* [Author](#author)
 
+---
 
-## Authors
+## Default Variables
 
-* [Thomas Boerger](https://github.com/tboerger)
+### storage_credentials
 
+Path to credentials file
+
+#### Default value
+
+```YAML
+storage_credentials: /etc/smbpasswd
+```
+
+### storage_dir_mode
+
+Mode for directories
+
+#### Default value
+
+```YAML
+storage_dir_mode: 770
+```
+
+### storage_file_mode
+
+Mode for files
+
+#### Default value
+
+```YAML
+storage_file_mode: 660
+```
+
+### storage_gid
+
+Group for the mount
+
+#### Default value
+
+```YAML
+storage_gid: root
+```
+
+### storage_options
+
+Mount options for fstab
+
+#### Default value
+
+```YAML
+storage_options:
+  - noauto
+  - nofail
+  - x-systemd.automount
+  - x-systemd.requires=network-online.target
+  - x-systemd.device-timeout=10
+  - vers=3.0
+  - mfsymlinks
+  - uid={{ storage_uid }}
+  - gid={{ storage_gid }}
+  - dir_mode={{ storage_dir_mode }}
+  - file_mode={{ storage_file_mode }}
+  - workgroup=workgroup
+  - credentials={{ storage_credentials }}
+```
+
+### storage_password
+
+Password for CIFS
+
+#### Default value
+
+```YAML
+storage_password:
+```
+
+### storage_path
+
+Path to mount to
+
+#### Default value
+
+```YAML
+storage_path:
+```
+
+### storage_server
+
+Server to connect via CIFS
+
+#### Default value
+
+```YAML
+storage_server:
+```
+
+### storage_share
+
+Share name of CIFS storage
+
+#### Default value
+
+```YAML
+storage_share: backup
+```
+
+### storage_uid
+
+User for the mount
+
+#### Default value
+
+```YAML
+storage_uid: root
+```
+
+### storage_username
+
+Username for CIFS
+
+#### Default value
+
+```YAML
+storage_username:
+```
+
+## Dependencies
+
+* None
 
 ## License
 
 Apache-2.0
 
+## Author
 
-## Copyright
-
-```
-Copyright (c) 2018 Thomas Boerger <thomas@webhippie.de>
-```
+[Thomas Boerger](https://github.com/tboerger)
