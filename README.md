@@ -1,6 +1,6 @@
 # storage
 
-[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/storage) [![Build Status](https://img.shields.io/drone/build/rolehippie/storage/master?logo=drone)](https://cloud.drone.io/rolehippie/storage) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/storage)](https://github.com/rolehippie/storage/blob/master/LICENSE) 
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/storage) [![Testing Build](https://github.com/rolehippie/storage/workflows/testing/badge.svg)](https://github.com/rolehippie/storage/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/storage/workflows/readme/badge.svg)](https://github.com/rolehippie/storage/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/storage/workflows/galaxy/badge.svg)](https://github.com/rolehippie/storage/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/storage)](https://github.com/rolehippie/storage/blob/master/LICENSE) 
 
 Ansible role to mount remote CIFS storage. 
 
@@ -49,7 +49,7 @@ Mode for directories
 #### Default value
 
 ```YAML
-storage_dir_mode: 770
+storage_dir_mode: '0770'
 ```
 
 ### storage_file_mode
@@ -59,7 +59,7 @@ Mode for files
 #### Default value
 
 ```YAML
-storage_file_mode: 660
+storage_file_mode: '0660'
 ```
 
 ### storage_gid
