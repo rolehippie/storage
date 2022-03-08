@@ -13,6 +13,9 @@
   file:
     path: '{{ storage_path }}'
     state: directory
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
   tags:
     - storage
 
