@@ -15,6 +15,7 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 ## Table of content
 
+- [Requirements](#requirements)
 - [Default Variables](#default-variables)
   - [storage_credentials](#storage_credentials)
   - [storage_dir_mode](#storage_dir_mode)
@@ -33,6 +34,11 @@ Building and improving this Ansible role have been sponsored by my current and p
 - [Author](#author)
 
 ---
+
+## Requirements
+
+- Minimum Ansible version: `2.10`
+
 
 ## Default Variables
 
