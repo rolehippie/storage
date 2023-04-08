@@ -7,7 +7,7 @@
 # [![Readme Workflow](https://github.com/rolehippie/storage/actions/workflows/readme.yml/badge.svg)](https://github.com/rolehippie/storage/actions/workflows/readme.yml)
 # [![Galaxy Workflow](https://github.com/rolehippie/storage/actions/workflows/galaxy.yml/badge.svg)](https://github.com/rolehippie/storage/actions/workflows/galaxy.yml)
 # [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/storage)](https://github.com/rolehippie/storage/blob/master/LICENSE)
-# [![Ansible Role](https://img.shields.io/ansible/role/51446)](https://galaxy.ansible.com/rolehippie/storage)
+# [![Ansible Role](https://img.shields.io/badge/role-rolehippie.storage-blue)](https://galaxy.ansible.com/rolehippie/storage)
 #
 # Ansible role to mount remote CIFS storage.
 #
