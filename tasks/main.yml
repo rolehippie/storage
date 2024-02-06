@@ -1,16 +1,15 @@
-# Standards: 1.2
 ---
 - name: Install required packages
   loop:
     - cifs-utils
-  package:
+  ansible.builtin.package:
     name: '{{ item }}'
     state: present
   tags:
     - storage
 
 - name: Create required path
-  file:
+  ansible.builtin.file:
     path: '{{ storage_path }}'
     state: directory
     owner: root
@@ -20,7 +19,7 @@
     - storage
 
 - name: Write credentials file
-  template:
+  ansible.builtin.template:
     src: credentials.j2
     dest: /etc/smbpasswd
     owner: root
@@ -30,7 +29,7 @@
     - storage
 
 - name: Mount storage volume
-  mount:
+  ansible.posix.mount:
     path: '{{ storage_path }}'
     src: '//{{ storage_server }}/{{ storage_share }}'
     fstype: cifs

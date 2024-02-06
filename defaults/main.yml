@@ -1,4 +1,3 @@
-# Standards: 1.2
 ---
 # @var storage_server:description: Server to connect via CIFS
 storage_server:
