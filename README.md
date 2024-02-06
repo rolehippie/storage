@@ -171,7 +171,7 @@ storage_username:
 
 ## Dependencies
 
-- None
+- [ansible.posix](https://github.com/ansible-collections/ansible.posix)
 
 ## License
 
