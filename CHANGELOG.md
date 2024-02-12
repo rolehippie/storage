@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/storage/compare/v1.0.0...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([673a25e](https://github.com/rolehippie/storage/commit/673a25e2dfda5dac3671cd2820b7df3694d9762b))
+* used full qualified collection names ([198f892](https://github.com/rolehippie/storage/commit/198f892e2f690d5e9311731f7880a86b96549f30))
+
+
+### Bugfixes
+
+* remove meta requirements and document used collections ([e4a23bc](https://github.com/rolehippie/storage/commit/e4a23bc5ceb193f0a006233543a6eaad0e5fbd1d))
+
 ## 1.0.0 (2023-01-05)
 
 
