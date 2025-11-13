@@ -29,6 +29,7 @@ galaxy_info:
       versions:
         - focal
         - jammy
+        - noble
   galaxy_tags:
     - storage
     - box
@@ -36,5 +37,8 @@ galaxy_info:
     - robot
 
 dependencies: []
+
+collections:
+  - ansible.posix
 
 ...
